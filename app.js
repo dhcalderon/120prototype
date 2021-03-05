@@ -4,7 +4,7 @@
  */
 
 var express = require('express');
-var http = require('http');
+var httpa = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
@@ -48,6 +48,6 @@ app.get('/deleted', get.delete);
 // Example route
 // app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+app.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
