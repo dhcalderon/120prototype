@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Login</title>
+	<link rel ="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="css/stylesheet.css" rel="stylesheet">
+    <script src="js/javascript.js"></script>
+    {{> facebook}}
+	<script src="/js/facebook.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body style="background-color: #cdf3f3;">
+	<div class="loginbox">
+		<img src="images/user.png" class="avatar">
+		<h1>Login</h1>
+		<fb:login-button scope="public_profile" onlogin="checkLoginState();">
+		</fb:login-button>
+	</div>
+
+</body>
+</head>
+</html>

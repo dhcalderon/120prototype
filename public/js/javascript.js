@@ -2,6 +2,8 @@ $(document).ready(function() {
     initializePage();
 });
 
+function initializePage(){}
+
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -19,8 +21,10 @@ list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.add('clicked');
   }
-
+  
   var header = $(".clicked").text();
+  $.get("/get", {name: header}, appendVal);
+
   $(".modal-header h2").text(header)
   modal.style.display = "block";
 
@@ -35,6 +39,8 @@ btnDone.onclick = function(){
 
 //Deletes the item from view
 btnDel.onclick = function(){
+  var title = $(".clicked").text();
+  $.get("/deleted", {name: title});
 	$(".clicked").addClass("deleted");
 	$(".deleted").removeClass("clicked");
 	$(".deleted").fadeOut();
@@ -54,3 +60,11 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+function appendVal(data) {
+    console.log(data);
+    $(".importance").append('<p style="text-align:left;">' + 
+    data['importance'] + '%</p>'+ '<hr>')
+    $(".urgency").append('<p style="text-align:left;">' + 
+    data['urgency'] + '%</p>' + '<hr>')
+  };

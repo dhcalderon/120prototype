@@ -33,16 +33,13 @@
 </div>
 
 <ul id="myUL">
-  <li>Hit the gym</li>
-  <li>Pay bills</li>
-  <li>Meet George</li>
-  <li>Buy eggs</li>
-  <li>Read a book</li>
-  <li>Organize office</li>
+  {{#each tasks}}
+  <li>{{name}}</li>
+  {{/each}}
 </ul>
 
 <div style="text-align:center">    
-	<a href="secondPage.html" class="btn btn-secondary btn-lg active" role="button" >New Task</a>
+	<a href="add" class="btn btn-secondary btn-lg active" role="button" >New Task</a>
 	<!-- more links here -->
 </div>
 
@@ -57,26 +54,16 @@
 	  </div>
 
 	  <div class="modal-body">
-
-	  	<div class="slidecontainer">
+      
+      <div class="importance">
         <h3 >How Important Is It?</h3>
-        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        <p style="text-align:left;">
-            Not Important
-            <span style="float:right;">
-            Very Important</span>
-            </p>
+        <hr>
       </div>
 
-      <div class="slidecontainer">
-      <h3 >How Urgent Is It?</h3>
-      <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-        <p style="text-align:left;">
-        Not Urgent
-        <span style="float:right;">
-        Very Urgent</span>
-        </p>
-        </div>
+      <div class="urgency">
+        <h3 >How Urgent Is It?</h3>
+        <hr>
+      </div>
 
 	  </div>
 	  
